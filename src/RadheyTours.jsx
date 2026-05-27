@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-
+import logoImg from '/public/logo.jpeg'
+import erticaImg from '/public/ertica.jpeg'
+import marutiImg from '/public/maruti.jpeg'
 // ─── DATA ────────────────────────────────────────────────
 const VEHICLES = [
   {
@@ -7,8 +9,8 @@ const VEHICLES = [
     name: "Maruti Ertiga",
     seats: "6+1 Seater",
     type: "MPV",
-    image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80",
-    erticaImg: "https://imgd.aeplcdn.com/664x374/n/cw/ec/40087/ertiga-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80",
+    image: erticaImg,
+    erticaImg: erticaImg,
     features: ["AC", "Music System", "GPS", "Spacious Boot"],
     desc: "Perfect for families & groups. Spacious, comfortable and fuel-efficient.",
     ideal: "Family / Group Travel",
@@ -19,8 +21,8 @@ const VEHICLES = [
     name: "Swift Dzire",
     seats: "4+1 Seater",
     type: "Sedan",
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
-    erticaImg: "https://imgd.aeplcdn.com/664x374/n/cw/ec/45691/swift-dzire-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80",
+    image: marutiImg,
+    erticaImg: marutiImg,
     features: ["AC", "Music System", "GPS", "Comfortable Seats"],
     desc: "Compact and elegant sedan for solo travellers and small families.",
     ideal: "Solo / Couple Travel",
@@ -262,11 +264,8 @@ export default function RadheyTours() {
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: scrolled ? "#fff" : "rgba(255,255,255,0.97)", backdropFilter: "blur(12px)", boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.1)" : "0 1px 0 rgba(0,0,0,0.06)", transition: "all 0.3s", height: 68, display: "flex", alignItems: "center", padding: "0 5%" }}>
         {/* Logo */}
         <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1, cursor: "pointer" }} onClick={() => scrollTo("home")}>
-          <div style={{ width: 44, height: 44, borderRadius: "50%", background: "linear-gradient(135deg,#e67e22,#f39c12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, boxShadow: "0 3px 10px rgba(230,126,34,0.4)" }}>🚗</div>
-          <div>
-            <div style={{ fontSize: 17, fontWeight: 800, color: "#e67e22", lineHeight: 1.1 }}>Radhey Tours</div>
-            <div style={{ fontSize: 11, color: "#888", letterSpacing: 1 }}>& Travels</div>
-          </div>
+          <img src={logoImg} alt="Radhey Tours" style={{ height: 56, width: "auto", objectFit: "contain" }} />
+
         </div>
 
         {/* Desktop nav */}
@@ -366,10 +365,10 @@ export default function RadheyTours() {
               <div style={{ fontSize: 22, fontWeight: 800, color: "#fff", marginBottom: 4 }}>Maruti Ertiga</div>
               <div style={{ fontSize: 13, color: "#b0b8d0", marginBottom: 20 }}>6+1 Seater MPV • AC • GPS • Music</div>
               <div style={{ borderRadius: 16, overflow: "hidden", height: 200, background: "#0f3460" }}>
-                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/40087/ertiga-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80"
+                <img src={marutiImg}
                   alt="Maruti Ertiga"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80"; }}
+                  onError={(e) => { e.target.src = marutiImg; }}
                 />
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: 20 }}>
@@ -698,11 +697,7 @@ export default function RadheyTours() {
           <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 40, marginBottom: 40 }}>
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-                <div style={{ width: 42, height: 42, borderRadius: "50%", background: "linear-gradient(135deg,#e67e22,#f39c12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>🚗</div>
-                <div>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: "#e67e22" }}>Radhey Tours & Travels</div>
-                  <div style={{ fontSize: 11, color: "#888" }}>Your Journey, Our Responsibility!</div>
-                </div>
+                <img src={logoImg} alt="Radhey Tours" style={{ height: 56, width: "auto", objectFit: "contain" }} />
               </div>
               <p style={{ fontSize: 13, color: "#666", lineHeight: 1.8, maxWidth: 260 }}>Trusted cab services from Aurangabad to Pune, Mumbai & Nashik. Comfortable, safe and affordable travel for everyone.</p>
             </div>
